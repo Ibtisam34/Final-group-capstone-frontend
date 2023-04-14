@@ -4,7 +4,6 @@ import { useDispatch } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import { setStatusIdle as setUserStatus } from '../redux/reducer/user/userSlice';
 
-
 const Alert = ({ message }) => {
   const [show, setShow] = useState(true);
   const dispatch = useDispatch;
@@ -14,7 +13,6 @@ const Alert = ({ message }) => {
     if (pathName === '/login') dispatch(setUserStatus());
   };
 
-  
   setTimeout(() => {
     setShow(false);
     setUserStatusIdle();
@@ -40,7 +38,6 @@ const Alert = ({ message }) => {
         show={show}
         dismissible
         onClose={() => {
-          setBookingStatusIdle();
           setUserStatusIdle();
           setShow(false);
         }}

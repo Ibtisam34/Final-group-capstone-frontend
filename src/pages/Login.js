@@ -21,7 +21,6 @@ const Login = () => {
   const handleSignIn = async (e) => {
     e.preventDefault();
     const authLogin = await dispatch(signIn(user));
-    console.log(authLogin);
     if (authLogin.payload.status === 'successful') {
       localStorage.setItem('authUser', JSON.stringify(authLogin.payload.user));
       navigate('/');

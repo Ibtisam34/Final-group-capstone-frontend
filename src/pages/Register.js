@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useDispatch} from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import * as Yup from 'yup';
 import { Formik, Form } from 'formik';
@@ -33,7 +33,6 @@ const Register = () => {
     passwordConfirmation: Yup.string()
       .oneOf([Yup.ref('password'), null], 'Password not match!'),
   });
-
 
   const dispatch = useDispatch();
 
@@ -73,7 +72,7 @@ const Register = () => {
   document.title = 'Luxury Cars | Register';
   return (
     <>
-      {status === 'failed' && <Alert message={message} />}
+      <Alert />
       <div className="container-fluid mt-5">
         <div className="row justify-content-center">
           <div className="col-md-6">
