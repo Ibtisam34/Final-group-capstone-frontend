@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import * as Yup from 'yup';
 import { Formik, Form } from 'formik';
-import Alert from '../components/Alert';
+// import Alert from '../components/Alert';
 import userToken from '../redux/reducer/user/userToken';
 import { signUp } from '../redux/reducer/user/userSlice';
 
@@ -69,10 +69,10 @@ const Register = () => {
     if (isTokenSet) navigate('/');
   }, [isTokenSet]);
 
-  document.title = 'Luxury Cars | Register';
+  document.title = 'Famous Doctors | Register';
   return (
     <>
-      <Alert />
+      {/* <Alert /> */}
       <div className="container-fluid mt-5">
         <div className="row justify-content-center">
           <div className="col-md-6">
