@@ -15,11 +15,11 @@ const Header = () => {
   };
   return (
     <header className="col-md-2 header">
-      <img src="https://img.freepik.com/premium-vector/heart-medical-shape-doctor-logo-design_23987-717.jpg?w=2000" alt="Logo" height="120" />
+      <img src="https://t4.ftcdn.net/jpg/03/58/16/05/360_F_358160523_d0Tc3knJ0j1RBobgWCjM4BZUo9gx33ZX.jpg" alt="Logo" height="120" />
       <nav className="nav-bar">
         <ul className="links d-flex flex-column sidebar-menu mt-3">
           <li><Link to="/">HOME</Link></li>
-          <li><Link to="/appointment">APOINTMENTS</Link></li>
+          <li><Link to="/appointment">APPOINTMENTS</Link></li>
           <li><Link to="/reservation">RESERVATIONS</Link></li>
           {
             isLoggedIn ? <button type="button" className="btn btn-danger mt-5" onClick={handleLogout}>Logout</button>

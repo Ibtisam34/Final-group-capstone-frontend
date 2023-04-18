@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import * as Yup from 'yup';
 import { Formik, Form } from 'formik';
-// import Alert from '../components/Alert';
+import Alert from '../components/Alert';
+import { allMessages, allStatus } from '../redux/reducer/appointments/appointmentSlice';
 import userToken from '../redux/reducer/user/userToken';
 import { signUp } from '../redux/reducer/user/userSlice';
 
@@ -21,19 +22,25 @@ const Register = () => {
       .max(100, 'Too Long')
       .matches(
         /^(?=.{4,50}$)(?![a-z])(?!.*[_.]{2})[a-zA-Z ]+(?<![_.])$/,
-        'Username should have at least 4 characters and should not contain numbers or special characters/punctuations!',
+        'Name should have at least 4 characters and should not contain numbers or special characters/punctuations!',
       ),
+    // .required('Name is required!'),
     email: Yup.string()
+    // .required('Email is required!')
       .email('Invalid Email!'),
     password: Yup.string()
+    // .required('Password is required!')
       .matches(
         /^[a-zA-Z0-9!@#$%^&* ]{6,20}$/,
         'Password must contain at least 6 characters!',
       ),
     passwordConfirmation: Yup.string()
       .oneOf([Yup.ref('password'), null], 'Password not match!'),
+    // .required('Confirm Password is required!'),
   });
 
+  const message = useSelector(allMessages);
+  const status = useSelector(allStatus);
   const dispatch = useDispatch();
 
   const navigate = useNavigate();
@@ -48,7 +55,7 @@ const Register = () => {
   };
 
   const signUphandler = async (user) => {
-    const register = await dispatch(signUp(user));
+    const register = dispatch(signUp(user));
     if (register.payload.status === '00') {
       localStorage.setItem('authUser', JSON.stringify(register.payload.data));
       setSignupStatus('success');
@@ -67,12 +74,12 @@ const Register = () => {
 
   useEffect(() => {
     if (isTokenSet) navigate('/');
-  }, [isTokenSet]);
+  }, [isTokenSet, navigate]);
 
-  document.title = 'Famous Doctors | Register';
+  document.title = 'Luxury Cars | Register';
   return (
     <>
-      {/* <Alert /> */}
+      {status === 'failed' && <Alert message={message} />}
       <div className="container-fluid mt-5">
         <div className="row justify-content-center">
           <div className="col-md-6">
@@ -82,14 +89,14 @@ const Register = () => {
               </div>
               <div className="card-body">
                 {signupStatus === 'success' && (
-                  <div className="alert alert-success" role="alert">
-                    User successfully registered!
-                  </div>
+                <div className="alert alert-success" role="alert">
+                  User successfully registered!
+                </div>
                 )}
                 {signupStatus === 'error' && (
-                  <div className="alert alert-danger" role="alert">
-                    An error occured!
-                  </div>
+                <div className="alert alert-danger" role="alert">
+                  An error occured!
+                </div>
                 )}
                 <Formik
                   initialValues={initialValues}
@@ -163,7 +170,7 @@ const Register = () => {
                           />
                         </label>
                         {errors.confirmPassword && touched.confirmPassword && (
-                          <div className="form-error">{errors.confirmPassword}</div>
+                        <div className="form-error">{errors.confirmPassword}</div>
                         )}
                       </div>
                       <button type="submit" className="btn btn-primary">

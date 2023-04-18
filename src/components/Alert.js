@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { useLocation } from 'react-router-dom';
+import { setStatusIdle as setBookingStatus } from '../redux/reducer/appointments/appointmentSlice';
 import { setStatusIdle as setUserStatus } from '../redux/reducer/user/userSlice';
 
 const Alert = ({ message }) => {
@@ -9,13 +10,23 @@ const Alert = ({ message }) => {
   const dispatch = useDispatch;
   const { pathName } = useLocation;
 
+  const setBookingStatusIdle = () => {
+    if (pathName === '/booking') dispatch(setBookingStatus());
+  };
+
   const setUserStatusIdle = () => {
     if (pathName === '/login') dispatch(setUserStatus());
   };
 
+  // const setVehiclesStatusIdle = () => {
+  //   if (pathName === '/vehicles') dispatch(setVehiclesStatus());
+  // };
+
   setTimeout(() => {
     setShow(false);
+    setBookingStatusIdle();
     setUserStatusIdle();
+    // setVehiclesStatusIdle();
   }, 5000);
 
   const filterMessage = (msg) => {
@@ -38,7 +49,9 @@ const Alert = ({ message }) => {
         show={show}
         dismissible
         onClose={() => {
+          setBookingStatusIdle();
           setUserStatusIdle();
+          // setVehiclesStatusIdle();
           setShow(false);
         }}
       >

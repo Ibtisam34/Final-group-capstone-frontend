@@ -20,7 +20,7 @@ const login = (user) => ({
   body: JSON.stringify({ api_user: user.user }),
 });
 
-const doctorSpecialization = (doctor) => ({
+const doctorAvailability = (doctor) => ({
   method: 'PATCH',
   headers: {
     'Content-Type': 'application/json',
@@ -170,33 +170,33 @@ const api = {
     return doctor;
   },
 
-  bookDoctor: async (id, newApointment) => {
-    const response = await fetch(`${baseURL}/users/${id}/appointments`, {
-      ...addappointment(newApointment),
+  bookDoctor: async (id, newAppointment) => {
+    const response = await fetch(`${baseURL}/users/${id}/bookings`, {
+      ...addappointment(newAppointment),
     });
     const appointment = await response.json();
     return appointment;
   },
 
   fetchAppointments: async (id) => {
-    const response = await fetch(`${baseURL}/users/${id}/Appointments`, {
+    const response = await fetch(`${baseURL}/users/${id}/appointments`, {
       ...getAppointments(),
     });
-    const apointments = await response.json();
-    return apointments;
+    const appointments = await response.json();
+    return appointments;
   },
 
-  deleteAppointment: async (userId, appointmentId) => {
-    const response = await fetch(`${baseURL}/users/${userId}/appointments/${appointmentId}`, {
+  deleteAppointment: async (userId, appoinmentId) => {
+    const response = await fetch(`${baseURL}/users/${userId}/appointments/${appoinmentId}`, {
       ...removeAppointment(),
     });
     const data = await response.json();
     return data;
   },
 
-  checkDoctorSpecialization: async (DoctorId, doctor) => {
-    const response = await fetch(`${baseURL}/doctors/${DoctorId}/specialization`, {
-      ...doctorSpecialization({ doctor }),
+  checkDoctorAvailability: async (doctorId, doctor) => {
+    const response = await fetch(`${baseURL}/doctors/${doctorId}/avalability`, {
+      ...doctorAvailability({ doctor }),
     });
     const data = await response.json();
     return data;

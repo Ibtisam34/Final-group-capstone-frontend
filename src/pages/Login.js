@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { signIn, loggedin } from '../redux/reducer/user/userSlice';
+import { signIn, loggedin, validateLogin } from '../redux/reducer/user/userSlice';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Login = () => {
@@ -20,18 +20,21 @@ const Login = () => {
 
   const handleSignIn = async (e) => {
     e.preventDefault();
-    const authLogin = await dispatch(signIn(user));
-    if (authLogin.payload.status === 'successful') {
-      localStorage.setItem('authUser', JSON.stringify(authLogin.payload.user));
+    const { email, password } = user;
+    const authLogin = validateLogin(email, password);
+    if (authLogin.status === 'successful') {
+      const { user: loggedInUser } = authLogin;
+      dispatch(signIn(loggedInUser));
+      localStorage.setItem('authUser', JSON.stringify(loggedInUser));
       navigate('/');
     }
   };
 
   useEffect(() => {
     if (isLoggedIn) navigate('/');
-  }, [isLoggedIn]);
+  }, [isLoggedIn, navigate]);
 
-  document.title = 'Famous Doctors | Login';
+  document.title = 'Luxury Cars | Login';
 
   return (
     <div className="container-fluid mt-5">

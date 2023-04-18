@@ -136,6 +136,26 @@ const authSlice = createSlice({
   },
 });
 
+export const validateLogin = (email, password) => {
+  // Here, you can make a call to your backend to fetch the user data
+  // based on the email provided and validate the password
+  // against the stored password hash.
+  // For demonstration purposes, let's assume there is an array of registered users
+  const registeredUsers = [
+    { email: 'user1@example.com', password: 'password1' },
+    { email: 'user2@example.com', password: 'password2' },
+    { email: 'user3@example.com', password: 'password3' },
+  ];
+  const user = registeredUsers.find((u) => u.email === email);
+  if (!user) {
+    return { status: 'error', message: 'User not found' };
+  }
+  if (user.password !== password) {
+    return { status: 'error', message: 'Incorrect password' };
+  }
+  return { status: 'successful', user: { email: user.email } };
+};
+
 export const { setStatusIdle } = authSlice.actions;
 export const authenticatedUser = (state) => state.user.authenticatedUser;
 export const allStatus = (state) => state.user.status;
