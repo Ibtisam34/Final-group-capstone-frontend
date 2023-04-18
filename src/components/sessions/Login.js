@@ -1,35 +1,18 @@
 import { useRef } from 'react';
 import PropTypes from 'prop-types';
+import { login } from './api';
 
 const Login = ({ setCurrUser, setShow }) => {
   const formRef = useRef();
-  const login = async (userInfo, setCurrUser) => {
-    const url = 'http://localhost:3000/users/sign_in';
-    try {
-      const response = await fetch(url, {
-        method: 'post',
-        headers: {
-          'content-type': 'application/json',
-          accept: 'application/json',
-        },
-        body: JSON.stringify(userInfo),
-      });
-      const data = await response.json();
-      if (!response.ok) throw data.error;
-      localStorage.setItem('token', response.headers.get('Authorization'));
-      setCurrUser(data);
-    } catch (error) {
-      console.log('error', error);
-    }
-  };
-  const handleSubmit = (e) => {
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData(formRef.current);
     const data = Object.fromEntries(formData);
     const userInfo = {
       user: { email: data.email, password: data.password },
     };
-    login(userInfo, setCurrUser);
+    await login(userInfo, setCurrUser);
     e.target.reset();
   };
   const handleClick = (e) => {
@@ -58,10 +41,7 @@ const Login = ({ setCurrUser, setShow }) => {
   );
 };
 Login.propTypes = {
-  setCurrUser: PropTypes.string,
-  setShow: PropTypes.shape([]).isRequired,
-};
-Login.defaultProps = {
-  setCurrUser: '',
+  setCurrUser: PropTypes.func.isRequired,
+  setShow: PropTypes.func.isRequired,
 };
 export default Login;

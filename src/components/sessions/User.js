@@ -13,7 +13,6 @@ const User = ({ currUser, setCurrUser }) => {
       <div>
         Hello
         {' '}
-        {currUser.email}
         <PrivateText currUser={currUser} />
         <Logout setCurrUser={setCurrUser} />
       </div>
@@ -29,10 +28,11 @@ const User = ({ currUser, setCurrUser }) => {
 };
 
 User.propTypes = {
-  setCurrUser: PropTypes.string,
-  currUser: PropTypes.shape([]).isRequired,
+  setCurrUser: PropTypes.func,
+  currUser: PropTypes.shape({}),
 };
 User.defaultProps = {
-  setCurrUser: '',
+  setCurrUser: null,
+  currUser: null,
 };
 export default User;

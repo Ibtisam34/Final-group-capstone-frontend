@@ -1,28 +1,11 @@
 import { useRef } from 'react';
 import PropTypes from 'prop-types';
+import { signup } from './api';
 
 const Signup = ({ setShow }) => {
   const formRef = useRef();
-  const signup = async (userInfo) => {
-    const url = 'http://localhost:3000/users';
-    try {
-      const response = await fetch(url, {
-        method: 'post',
-        headers: {
-          'content-type': 'application/json',
-          accept: 'application/json',
-        },
-        body: JSON.stringify(userInfo),
-      });
-      const data = await response.json();
-      if (!response.ok) throw data.error;
-      localStorage.setItem('token', response.headers.get('Authorization'));
-    //   setCurrUser(data);
-    } catch (error) {
-      console.log('error', error);
-    }
-  };
-  const handleSubmit = (e) => {
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData(formRef.current);
     const data = Object.fromEntries(formData);
@@ -34,12 +17,12 @@ const Signup = ({ setShow }) => {
         password_confirmation: data.password_confirmation,
       },
     };
-    signup(userInfo);
+    await signup(userInfo);
     e.target.reset();
   };
   const handleClick = (e) => {
     e.preventDefault();
-    setShow(false);
+    setShow(true);
   };
   return (
     <div>
@@ -65,7 +48,7 @@ const Signup = ({ setShow }) => {
       <br />
       <div>
         Already registered,
-        <a href="/login" onClick={handleClick}>Login</a>
+        <a href="#login" onClick={handleClick}>Login</a>
         {' '}
         here.
       </div>
@@ -73,6 +56,6 @@ const Signup = ({ setShow }) => {
   );
 };
 Signup.propTypes = {
-  setShow: PropTypes.shape([]).isRequired,
+  setShow: PropTypes.func.isRequired,
 };
 export default Signup;

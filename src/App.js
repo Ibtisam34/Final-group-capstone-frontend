@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import './App.css';
-import User from './components/User';
+import User from './components/sessions/User';
 // import PrivateText from './components/PrivateText';
 
 const App = () => {
