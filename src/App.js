@@ -1,17 +1,14 @@
-import './App.css';
-import React from 'react';
-import AppRouter from './routers';
-import Header from './components/Header';
+import { useState } from 'react';
+// import './App.css';
+import User from './components/User';
+// import PrivateText from './components/PrivateText';
 
-function App() {
+const App = () => {
+  const [currUser, setCurrUser] = useState(null);
   return (
-    <div className="row">
-      <Header />
-      <div className="col-md-10 offset-md-2 main-content">
-        <AppRouter />
-      </div>
+    <div className="App">
+      <User currUser={currUser} setCurrUser={setCurrUser} />
     </div>
   );
-}
-
+};
 export default App;
