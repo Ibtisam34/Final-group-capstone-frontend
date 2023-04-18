@@ -18,7 +18,6 @@ export const bookDoctor = createAsyncThunk(BOOK_DOCTOR,
   async ({ userId, appointments }) => {
     try {
       return await api.bookDoctor(userId, appointments);
-      
     } catch (error) {
       return error.message;
     }
