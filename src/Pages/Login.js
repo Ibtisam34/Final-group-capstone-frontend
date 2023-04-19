@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
-import { signIn, authenticatedUser } from '../redux/reducer/user/userSlice';
+import { signIn, getTextc } from '../redux/reducer/user/userSlice';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-const Login = () => {
+const Login = ({ currUser, setCurrUser }) => {
   const [user, setUser] = useState({});
-
+  // const [dataMem, setDataMember] = useState(false)
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const isLoggedIn = useSelector(authenticatedUser);
+  //   const isLoggedIn = useSelector(authenticatedUser);
 
   const handleChange = (e) => {
     const {
@@ -17,19 +18,23 @@ const Login = () => {
     } = e;
     setUser({ ...user, [input]: value });
   };
-
   const handleSignIn = async (e) => {
     e.preventDefault();
     const authLogin = await dispatch(signIn(user));
+    setCurrUser(await getTextc());
     if (authLogin.payload.status === 'successful') {
       localStorage.setItem('authUser', JSON.stringify(authLogin.payload.user));
       navigate('/');
     }
   };
+  useEffect(() => {
+    getTextc();
+  });
+  console.log('girma', currUser);
 
   useEffect(() => {
-    if (isLoggedIn.length > 0) navigate('/');
-  }, [isLoggedIn]);
+    if (currUser) navigate('/');
+  }, [currUser]);
 
   document.title = 'Famous Doctors | Login';
 
@@ -84,4 +89,8 @@ const Login = () => {
   );
 };
 
+Login.propTypes = {
+  currUser: PropTypes.bool.isRequired,
+  setCurrUser: PropTypes.func.isRequired,
+};
 export default Login;

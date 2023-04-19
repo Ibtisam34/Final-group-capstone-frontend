@@ -22,6 +22,25 @@ const initialState = {
   status: 'idle', // 'idle' | 'loading' | 'succeeded' | 'failed' | 'unauthorized' | 'expired'//
   message: '',
   error: null,
+  // member: false,
+};
+
+export const getTextc = async () => {
+  try {
+    const response = await fetch('http://localhost:3000/member-data', {
+      method: 'get',
+      headers: {
+        'content-type': 'application/json',
+        authorization: localStorage.getItem('token'),
+      },
+    });
+    if (!response.ok) throw Error;
+    const data = await response.json();
+    console.log(data);
+    return true;
+  } catch (error) {
+    return false;
+  }
 };
 
 export const signUp = createAsyncThunk(REGISTER, async (user) => {
@@ -85,6 +104,7 @@ const authSlice = createSlice({
         ...state,
         status: 'failed',
         error: action.error.message,
+        loggedin: false,
       }))
       .addCase(signIn.pending, (state) => ({
         ...state,
@@ -101,6 +121,7 @@ const authSlice = createSlice({
         ...state,
         status: 'failed',
         error: action.error.message,
+        loggedin: false,
       }))
       .addCase(signOut.pending, (state) => ({
         ...state,
@@ -141,5 +162,6 @@ export const authenticatedUser = (state) => state.user.authenticatedUser;
 export const allStatus = (state) => state.user.status;
 export const allMessages = (state) => state.user.message;
 export const loggedin = (state) => state.user.loggedin;
+// export const member = (state) => state.user.member;
 
 export default authSlice.reducer;
