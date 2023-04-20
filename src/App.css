@@ -1,80 +1,311 @@
-* {
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Fugaz+One&family=Great+Vibes&family=Lavishly+Yours&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Righteous&family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+body {
   margin: 0;
-  padding: 0;
-  font-family: Poppins, sans-serif;
 }
 
-a {
-  text-decoration: none !important;
-  color: #000 !important;
-  font-size: 20px;
+.App {
+  overflow: hidden;
 }
 
-.header {
-  padding: 2rem;
-  background-color: #fff;
-  color: #fff;
-  min-height: 100vh;
-  position: fixed;
+.bg-green {
+  background: #97bf02;
 }
 
-.links {
-  display: flex;
-  gap: 10px;
+.carousel {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: -1;
 }
 
-.links > li {
-  list-style: none;
-  color: #fff;
+.carousel-item {
+  height: 100vh;
 }
 
-.container {
+.login-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.logo-img {
+  display: block;
+  margin: auto;
+}
+
+.logo-text {
+  font-family: 'Great Vibes', cursive;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.nav-item {
+  background: #f8f9fa;
+  font-weight: 500;
+  color: #41464b;
+}
+
+.nav-item.active {
+  background: #97bf02;
+  border: none;
+}
+
+.access-btn {
+  border: none;
+  background: none;
+}
+
+.theme-btn {
+  height: 2.7rem;
+  background-color: #97bf0f;
+  border: 1px solid #97bf0f;
+  width: 10rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 16px;
+}
+
+.logout-btn {
+  position: absolute;
+  bottom: 20px;
+  right: 30px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+.bottom-text {
+  font-size: 0.8rem;
+}
+
+/* Homepage carousel */
+
+.react-multi-carousel-item {
+  margin: 1rem;
+}
+
+.carousel-img-container {
+  width: 100%;
+  height: 80%;
+  border-radius: 100px;
+}
+
+.carousel-img-container img {
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.content-panel {
+  height: 100vh;
+  overflow-y: scroll;
+}
+
+.homepage-header-container {
   display: flex;
   justify-content: center;
-  align-content: center;
-  padding-bottom: 5rem;
-  text-align: center;
-  overflow: hidden;
-  width: 100vw;
+  height: 30vh;
+  align-items: center;
+  flex-direction: column;
 }
 
-.main-content {
-  background-color: #eee;
-  min-height: 100vh;
+.homepage-header-container h1,
+p {
+  z-index: 1;
 }
 
-.side-bar {
-  background-color: #fff;
+.carousel-description span {
+  color: gray;
 }
 
-.sidebar-menu > li > a {
-  text-decoration: none;
-  color: #000 !important;
-  width: 100%;
-  padding: 10px;
-  padding-right: 25px;
-  font-size: 15px;
-}
-
-.sidebar-menu {
-  padding: 0;
-  padding-left: 15px;
-}
-
-.sidebar-menu > li > a:hover {
-  background-color: #0fbf6d;
-  color: #fff !important;
-}
-
-.btnss {
-  position: relative;
-  top: 20%;
+/* Reservations */
+.reservations-container {
+  height: 100vh;
+  color: #fff;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
 }
 
-@media (max-width: 700px) {
-  .sidebar-menu > li > a {
-    font-size: 12px;
+.reservation-container {
+  width: 100%;
+  display: contents;
+}
+
+.reservation-header-links {
+  width: 100vw;
+  color: #fff;
+  margin-top: 1rem;
+  margin-left: 2rem;
+}
+
+.reservation-header-links a {
+  color: #fff;
+}
+
+.reservation {
+  width: 80%;
+}
+
+.reservations-description {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 9%;
+}
+
+.reservations-header {
+  border-bottom: 1.5px solid #c4dd78;
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  width: 100%;
+  text-align: center;
+}
+
+.reservations-description h1 {
+  font-size: 3rem;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.reservations-description p {
+  font-size: 1.3rem;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.reservations-buttons {
+  margin: 2rem 0;
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.book-btn,
+#dropdown-menu-align-end,
+.react-datepicker-wrapper {
+  width: 200px;
+  height: 60px;
+  border-radius: 30px;
+  background: #fff;
+  border: 2px solid #fff;
+  color: #97bf02;
+  font-weight: 500;
+  letter-spacing: 1px;
+  font-size: 1.1rem;
+  box-shadow: none;
+}
+
+.reservations-buttons .react-datepicker-wrapper {
+  width: 200px !important;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+}
+
+.react-datepicker__input-container,
+.react-datepicker__input-container input {
+  width: 100px !important;
+  outline: none;
+}
+
+.react-datepicker-wrapper input {
+  color: #97bf02;
+  border: none;
+}
+
+.book-btn:hover,
+#dropdown-menu-align-end {
+  color: #fff;
+  background: #97bf02;
+  border: 2px solid #c4dd78;
+  padding: 10px;
+}
+
+#dropdown-menu-align-end:hover {
+  background: #fff;
+  color: #97bf02;
+}
+
+#selectDropdown {
+  color: #fff;
+  background: #97bf02;
+  border: 2px solid #c4dd78;
+  padding: 10px;
+  width: 200px;
+  height: 60px;
+  border-radius: 30px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  font-size: 1.1rem;
+  box-shadow: none;
+}
+
+.dropdown-menu-end {
+  width: 100%;
+  border: none;
+}
+
+@media only screen and (max-width: 769px) {
+  .reservations-description {
+    padding: 1rem;
   }
+
+  .reservations-description h1 {
+    font-size: 3rem;
+    letter-spacing: 1px;
+    line-height: 4rem;
+  }
+
+  .reservations-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .react-datepicker-wrapper,
+  .book-btn,
+  .dropdown {
+    width: 80% !important;
+    margin-bottom: 1.5rem;
+  }
+
+  #dropdown-menu-align-end,
+  #selectDropdown {
+    width: 100%;
+  }
+
+  .reservations-container {
+    justify-content: center;
+  }
+
+  .reservation {
+    width: 90%;
+  }
+}
+
+/* User Reservations */
+
+.card {
+  margin-bottom: 2rem;
+  color: black;
+}
+
+.card-desc {
+  padding: 1rem;
+}
+
+.card-title {
+  margin-bottom: 2rem;
+}
+
+.card-text {
+  margin-bottom: 0;
+}
+
+.mr-1 {
+  margin-right: 1rem;
 }

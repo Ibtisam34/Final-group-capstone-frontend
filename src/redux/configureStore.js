@@ -1,16 +1,13 @@
-import { combineReducers, configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
-import logger from 'redux-logger';
-import userSlice from './reducer/user/userSlice';
+import {
+  applyMiddleware, combineReducers, createStore, compose,
+} from '@reduxjs/toolkit';
+import thunk from 'redux-thunk';
+import usersReducer from './users/usersReducer';
 
-const rootReducer = combineReducers({
-  user: userSlice,
+const reducer = combineReducers({
+  usersReducer,
 });
 
-const store = configureStore(
-  {
-    reducer: rootReducer,
-    middleware: [...getDefaultMiddleware(), logger],
-  },
-);
+const store = createStore(reducer, compose(applyMiddleware(thunk)));
 
 export default store;
