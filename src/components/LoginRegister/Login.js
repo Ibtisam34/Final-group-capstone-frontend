@@ -4,6 +4,7 @@ import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { useSelector, useDispatch } from 'react-redux';
+import PropTypes from 'prop-types';
 import Slider from './Slider';
 import Logo from '../../assets/images/LOGO-DOCTOR.png';
 import { fetchUsers } from '../../redux/users/usersReducer';
@@ -15,7 +16,7 @@ function Login({ setIsLoggedIn }) {
 
   useEffect(() => {
     dispatch(fetchUsers());
-  }, []);
+  }, [dispatch]);
   const users = useSelector((state) => state.usersReducer);
 
   const handleLogin = () => {
@@ -67,5 +68,9 @@ function Login({ setIsLoggedIn }) {
     </Container>
   );
 }
+
+Login.propTypes = {
+  setIsLoggedIn: PropTypes.bool.isRequired,
+};
 
 export default Login;
