@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 import { useParams, Link } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import { MenuAuth } from './LoginRegister/Auth';
+
 function Detail({ doctor, isLoggedIn }) {
   const { user_id: userId } = useParams();
   const {
