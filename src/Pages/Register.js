@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import * as Yup from 'yup';
 import { Formik, Form } from 'formik';
-// import Alert from '../components/Alert';
-import userToken from '../redux/reducer/user/userToken';
+// import userToken from '../redux/reducer/user/userToken';
 import { signUp } from '../redux/reducer/user/userSlice';
 
 const Register = () => {
@@ -12,7 +11,7 @@ const Register = () => {
     name: '',
     email: '',
     password: '',
-    passwordConfirmation: '',
+    password_confirmation: '',
   };
 
   const SignUpSchema = Yup.object().shape({
@@ -30,14 +29,13 @@ const Register = () => {
         /^[a-zA-Z0-9!@#$%^&* ]{6,20}$/,
         'Password must contain at least 6 characters!',
       ),
-    passwordConfirmation: Yup.string()
+    password_confirmation: Yup.string()
       .oneOf([Yup.ref('password'), null], 'Password not match!'),
   });
 
   const dispatch = useDispatch();
 
   const navigate = useNavigate();
-  const isTokenSet = userToken();
 
   const [values, setValues] = useState(initialValues);
   const [signupStatus, setSignupStatus] = useState('');
@@ -57,17 +55,13 @@ const Register = () => {
         name: '',
         email: '',
         password: '',
-        passwordConfirmation: '',
+        password_confirmation: '',
       }));
       navigate('/');
     } else {
       setSignupStatus('error');
     }
   };
-
-  useEffect(() => {
-    if (isTokenSet) navigate('/');
-  }, [isTokenSet]);
 
   document.title = 'Luxury Cars | Register';
   return (
@@ -154,11 +148,11 @@ const Register = () => {
                           Confirm password
                           <input
                             type="password"
-                            name="passwordConfirmation"
+                            name="password_confirmation"
                             className="form-control"
                             id="confirmPasswordInput"
                             autoComplete="password"
-                            value={values.passwordConfirmation}
+                            value={values.password_confirmation}
                             onChange={handleChange}
                           />
                         </label>

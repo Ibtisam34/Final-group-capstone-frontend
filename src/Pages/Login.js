@@ -7,6 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Login = ({ currUser, setCurrUser }) => {
   const [user, setUser] = useState({});
+  const [signupStatus, setSignupStatus] = useState('');
   // const [dataMem, setDataMember] = useState(false)
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -24,13 +25,16 @@ const Login = ({ currUser, setCurrUser }) => {
     setCurrUser(await getTextc());
     if (authLogin.payload.status === 'successful') {
       localStorage.setItem('authUser', JSON.stringify(authLogin.payload.user));
+      setSignupStatus('Sign in successefuly');
       navigate('/');
+    } else {
+      setSignupStatus('Invalid email or password');
     }
   };
   useEffect(() => {
     getTextc();
   });
-  console.log('girma', currUser);
+  // console.log('girma', currUser);
 
   useEffect(() => {
     if (currUser) navigate('/');
@@ -45,6 +49,7 @@ const Login = ({ currUser, setCurrUser }) => {
           <div className="card">
             <div className="card-header text-center">
               <h3>Login</h3>
+              <p style={{ color: 'red' }}>{signupStatus}</p>
             </div>
             <div className="card-body">
               <form onSubmit={handleSignIn}>
