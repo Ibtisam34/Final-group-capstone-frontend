@@ -1,4 +1,4 @@
-const baseURL = 'http://localhost:3000/api';
+const baseURL = 'http://localhost:3000';
 // REACT_APP_BASE_URL=http://localhost:3000/api
 
 const setAuthToken = ({ headers }) => localStorage.setItem('token', headers.get('Authorization'));
@@ -11,16 +11,16 @@ const unSetAuthToken = () => {
 const register = (user) => ({
   method: 'POST',
   headers: { 'Content-Type': 'application/json' },
-  body: JSON.stringify({ api_user: user.user }),
+  body: JSON.stringify({ user: user.user }),
 });
 
 const login = (user) => ({
   method: 'POST',
   headers: { 'Content-Type': 'application/json' },
-  body: JSON.stringify({ api_user: user.user }),
+  body: JSON.stringify({ user: user.user }),
 });
 
-const doctorAvailability = (doctor) => ({
+const doctorSpecialization = (doctor) => ({
   method: 'PATCH',
   headers: {
     'Content-Type': 'application/json',
@@ -58,7 +58,7 @@ const logout = () => ({
 
 const api = {
   register: async (user) => {
-    const response = await fetch(`${baseURL}/signup`, {
+    const response = await fetch(`${baseURL}/users`, {
       ...register({ user }),
     });
 
@@ -70,7 +70,7 @@ const api = {
   },
 
   login: async (user) => {
-    const response = await fetch(`${baseURL}/login`, {
+    const response = await fetch(`${baseURL}/users/sign_in`, {
       ...login({ user }),
     });
 
@@ -99,7 +99,7 @@ const api = {
   },
 
   logout: async () => {
-    const response = await fetch(`${baseURL}/logout`, {
+    const response = await fetch(`${baseURL}/users/sign_out`, {
       ...logout(),
     });
 
@@ -170,33 +170,33 @@ const api = {
     return doctor;
   },
 
-  bookDoctor: async (id, newAppointment) => {
-    const response = await fetch(`${baseURL}/users/${id}/bookings`, {
-      ...addappointment(newAppointment),
+  bookDoctor: async (id, newApointment) => {
+    const response = await fetch(`${baseURL}/users/${id}/appointments`, {
+      ...addappointment(newApointment),
     });
     const appointment = await response.json();
     return appointment;
   },
 
   fetchAppointments: async (id) => {
-    const response = await fetch(`${baseURL}/users/${id}/appointments`, {
+    const response = await fetch(`${baseURL}/users/${id}/Appointments`, {
       ...getAppointments(),
     });
-    const appointments = await response.json();
-    return appointments;
+    const apointments = await response.json();
+    return apointments;
   },
 
-  deleteAppointment: async (userId, appoinmentId) => {
-    const response = await fetch(`${baseURL}/users/${userId}/appointments/${appoinmentId}`, {
+  deleteAppointment: async (userId, appointmentId) => {
+    const response = await fetch(`${baseURL}/users/${userId}/appointments/${appointmentId}`, {
       ...removeAppointment(),
     });
     const data = await response.json();
     return data;
   },
 
-  checkDoctorAvailability: async (doctorId, doctor) => {
-    const response = await fetch(`${baseURL}/doctors/${doctorId}/avalability`, {
-      ...doctorAvailability({ doctor }),
+  checkDoctorSpecialization: async (DoctorId, doctor) => {
+    const response = await fetch(`${baseURL}/doctors/${DoctorId}/specialization`, {
+      ...doctorSpecialization({ doctor }),
     });
     const data = await response.json();
     return data;
