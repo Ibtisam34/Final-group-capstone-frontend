@@ -4,6 +4,10 @@ import './App.css';
 import Login from './components/LoginRegister/Login';
 import Register from './components/LoginRegister/Register';
 import Auth from './components/LoginRegister/Auth';
+import Home from './components/Homepage/Home';
+import Homepage from './components/Homepage/Homepage';
+import Detail from './components/details';
+import AddDoctor from './components/AddDoctor/AddDoctor';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(localStorage.getItem('isLoggedIn'));
@@ -12,6 +16,14 @@ function App() {
   return (
     <main className="App">
       <Routes>
+        <Route path="/*" element={<Home isLoggedIn={isLoggedIn} />}>
+          <Route exact path={paths.home} element={<Homepage isLoggedIn={isLoggedIn} />} />
+          <Route path={paths.details} element={<Detail />} />
+        </Route>
+        <Route
+          path={paths.AddDoctor}
+          element={isLoggedIn ? <AddDoctor /> : <Login setIsLoggedIn={setIsLoggedIn} />}
+        />
         <Route path={paths.login} element={<Login setIsLoggedIn={setIsLoggedIn} />} />
         <Route path={paths.register} element={<Register />} />
       </Routes>
