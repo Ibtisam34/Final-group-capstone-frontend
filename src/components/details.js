@@ -13,6 +13,7 @@ function Detail({ doctor, isLoggedIn }) {
     image, name, specialization, email, phone, availability, id,
   } = doctor;
   const paths = MenuAuth(isLoggedIn, userId, id);
+
   return (
     <Container>
       <div className="details-container">
@@ -41,8 +42,8 @@ function Detail({ doctor, isLoggedIn }) {
                   </p>
                 </div>
                 <div>
-                  <Link to={paths.doctor_reservation}>
-                    <button className="btn-success theme-btn mt-4 rounded" size="lg" type="button">Make Reservation</button>
+                  <Link to={paths.appointment}>
+                    <button className="btn-success theme-btn mt-4 rounded my-btn" size="lg" type="button">Book</button>
                   </Link>
                 </div>
                 <div>
@@ -58,6 +59,7 @@ function Detail({ doctor, isLoggedIn }) {
     </Container>
   );
 }
+
 Detail.propTypes = {
   doctor: PropTypes.shape({
     image: PropTypes.string.isRequired,
@@ -70,4 +72,5 @@ Detail.propTypes = {
   }).isRequired,
   isLoggedIn: PropTypes.bool.isRequired,
 };
+
 export default Detail;
