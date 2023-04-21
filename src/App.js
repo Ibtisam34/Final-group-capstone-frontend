@@ -9,7 +9,6 @@ import Register from './components/LoginRegister/Register';
 import AddDoctor from './components/AddDoctor/AddDoctor';
 import Auth from './components/LoginRegister/Auth';
 import Appointment from './components/Appointments/Appointments';
-import UserAppointments from './components/Appointments/UserAppointments';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(localStorage.getItem('isLoggedIn'));
@@ -21,10 +20,6 @@ function App() {
         <Route path="/*" element={<Home isLoggedIn={isLoggedIn} />}>
           <Route exact path={paths.home} element={<Homepage isLoggedIn={isLoggedIn} />} />
           <Route path={paths.details} element={<Detail />} />
-          <Route
-            path={paths.userappointments}
-            element={<UserAppointments isLoggedIn={isLoggedIn} />}
-          />
         </Route>
         <Route
           path={paths.AddDoctor}
