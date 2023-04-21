@@ -6,7 +6,7 @@ import Register from './components/LoginRegister/Register';
 import Auth from './components/LoginRegister/Auth';
 import Home from './components/Homepage/Home';
 import Homepage from './components/Homepage/Homepage';
-import Detail from './components/Details';
+import Detail from './components/details';
 import AddDoctor from './components/AddDoctor/AddDoctor';
 
 function App() {

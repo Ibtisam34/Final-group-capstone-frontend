@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import PropTypes from 'prop-types';
-import Detail from '../Details';
+import Detail from '../details';
 import { fetchDoctors } from '../../redux/doctors/doctorsReducer';
 
 function Slider({ isLoggedIn }) {
