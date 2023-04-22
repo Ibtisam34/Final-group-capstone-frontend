@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import PropTypes from 'prop-types';
-import Detail from '../details';
+import Detail from '../Details';
 import { fetchDoctors } from '../../redux/doctors/doctorsReducer';
 
 function Slider({ isLoggedIn }) {
@@ -61,6 +61,7 @@ function Slider({ isLoggedIn }) {
                   {' '}
                 </p>
                 <span>{doctor.specialization}</span>
+                <p>{doctor.availability}</p>
               </div>
             </div>
           ))}

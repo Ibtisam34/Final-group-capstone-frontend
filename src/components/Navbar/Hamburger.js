@@ -13,6 +13,8 @@ function Hamburger({ isLoggedIn }) {
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="d-md-none px-2">
           <Nav.Link href={paths.home}>HOME</Nav.Link>
+          <Nav.Link href={paths.appointment}>ADD APPOINTMENT</Nav.Link>
+          <Nav.Link href={paths.userappointments}>MY APPOINTMENTS</Nav.Link>
           <Nav.Link href={paths.AddDoctor}>ADD DOCTOR</Nav.Link>
         </Nav>
       </Navbar.Collapse>

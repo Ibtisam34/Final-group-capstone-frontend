@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
-import Login from './components/LoginRegister/Login';
-import Register from './components/LoginRegister/Register';
-import Auth from './components/LoginRegister/Auth';
 import Home from './components/Homepage/Home';
 import Homepage from './components/Homepage/Homepage';
-import Detail from './components/details';
+import Detail from './components/Details';
+import Login from './components/LoginRegister/Login';
+import Register from './components/LoginRegister/Register';
 import AddDoctor from './components/AddDoctor/AddDoctor';
+import Auth from './components/LoginRegister/Auth';
+import Appointment from './components/Appointments/Appointments';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(localStorage.getItem('isLoggedIn'));
@@ -23,6 +24,10 @@ function App() {
         <Route
           path={paths.AddDoctor}
           element={isLoggedIn ? <AddDoctor /> : <Login setIsLoggedIn={setIsLoggedIn} />}
+        />
+        <Route
+          path={paths.appointment}
+          element={isLoggedIn ? <Appointment /> : <Login setIsLoggedIn={setIsLoggedIn} />}
         />
         <Route path={paths.login} element={<Login setIsLoggedIn={setIsLoggedIn} />} />
         <Route path={paths.register} element={<Register />} />

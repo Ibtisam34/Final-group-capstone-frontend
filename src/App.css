@@ -112,6 +112,12 @@ body {
   flex-direction: column;
 }
 
+.btn-success.theme-btn.mt-4.rounded {
+  background-color: #0d6efd;
+  border: none;
+  color: white;
+}
+
 .homepage-header-container h1,
 p {
   z-index: 1;
@@ -128,6 +134,7 @@ p {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: #f8f9fa;
 }
 
 .reservation-container {
@@ -158,11 +165,12 @@ p {
 }
 
 .reservations-header {
-  border-bottom: 1.5px solid #c4dd78;
+  border-bottom: 1.5px solid #41464b;
   margin-bottom: 3rem;
   padding-bottom: 2rem;
   width: 100%;
   text-align: center;
+  color: #41464b;
 }
 
 .reservations-description h1 {
@@ -193,7 +201,7 @@ p {
   border-radius: 30px;
   background: #fff;
   border: 2px solid #fff;
-  color: #97bf02;
+  color: #41464b;
   font-weight: 500;
   letter-spacing: 1px;
   font-size: 1.1rem;
@@ -214,21 +222,28 @@ p {
 }
 
 .react-datepicker-wrapper input {
-  color: #97bf02;
+  color: #41464b;
   border: none;
+  cursor: pointer;
+}
+
+.react-datepicker-wrapper input:hover {
+  color: #fff;
+  background: #439feb;
 }
 
 .book-btn:hover,
 #dropdown-menu-align-end {
   color: #fff;
-  background: #97bf02;
-  border: 2px solid #c4dd78;
+  background: #439feb;
+  border: 2px solid #439feb;
   padding: 10px;
 }
 
 #dropdown-menu-align-end:hover {
   background: #fff;
-  color: #97bf02;
+  color: #41464b;
+  border: 2px solid #41464b;
 }
 
 #selectDropdown {

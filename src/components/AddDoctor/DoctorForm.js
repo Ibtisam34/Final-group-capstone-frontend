@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { Form, Button } from 'react-bootstrap';
 import { postDoctor } from '../../redux/doctors/doctorsReducer';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import '../../App.css';
 
 function CreateDoctorForm() {
   const [name, setName] = useState('');
@@ -80,7 +81,7 @@ function CreateDoctorForm() {
       />
 
       <div className="text-center mb-5">
-        <Button variant="success" className="theme-btn rounded" type="submit">
+        <Button className="theme-btn rounded" type="submit">
           Add Doctor
         </Button>
       </div>

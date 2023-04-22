@@ -16,6 +16,12 @@ function MenuList({ isLoggedIn }) {
       <ListGroup.Item action as={NavLink} to={paths.AddDoctor} className="nav-item">
         ADD DOCTOR
       </ListGroup.Item>
+      <ListGroup.Item action as={NavLink} to={paths.appointment} className="nav-item">
+        ADD APPOINTMENT
+      </ListGroup.Item>
+      <ListGroup.Item action as={NavLink} to={paths.userappointments} className="nav-item">
+        MY APPOINTMENTS
+      </ListGroup.Item>
     </ListGroup>
   );
 }

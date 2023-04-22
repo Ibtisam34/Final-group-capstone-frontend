@@ -36,17 +36,6 @@
   display: grid;
 }
 
-.reserve-btn {
-  height: 2.7rem;
-  background-color: #97bf0f;
-  border: 2px solid #97bf0f;
-  width: 10rem;
-  font-weight: 700;
-  font-size: 18px;
-  letter-spacing: 2px;
-  border-radius: 4%;
-}
-
 .images {
   height: 26rem;
 }
