@@ -22,7 +22,7 @@ function Home({ isLoggedIn }) {
 }
 
 Home.propTypes = {
-  isLoggedIn: PropTypes.bool.isRequired,
+  isLoggedIn: PropTypes.string.isRequired,
 };
 
 export default Home;

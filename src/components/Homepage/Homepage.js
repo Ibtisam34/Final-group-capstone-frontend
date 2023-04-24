@@ -39,7 +39,7 @@ function Homepage({ isLoggedIn }) {
 }
 
 Homepage.propTypes = {
-  isLoggedIn: PropTypes.bool.isRequired,
+  isLoggedIn: PropTypes.string.isRequired,
 };
 
 export default Homepage;

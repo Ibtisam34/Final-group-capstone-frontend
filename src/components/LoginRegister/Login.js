@@ -70,7 +70,7 @@ function Login({ setIsLoggedIn }) {
 }
 
 Login.propTypes = {
-  setIsLoggedIn: PropTypes.bool.isRequired,
+  setIsLoggedIn: PropTypes.func.isRequired,
 };
 
 export default Login;

@@ -27,7 +27,7 @@ function MenuList({ isLoggedIn }) {
 }
 
 MenuList.propTypes = {
-  isLoggedIn: PropTypes.bool.isRequired,
+  isLoggedIn: PropTypes.string.isRequired,
 };
 
 export default MenuList;
