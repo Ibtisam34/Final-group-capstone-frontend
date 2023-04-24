@@ -133,8 +133,6 @@ p {
   color: gray;
 }
 
-
-
 /* Reservations */
 .reservations-container {
   height: 100vh;
@@ -309,7 +307,6 @@ p {
     width: 90%;
   }
 }
-
 
 /* User Reservations */
 .card {
