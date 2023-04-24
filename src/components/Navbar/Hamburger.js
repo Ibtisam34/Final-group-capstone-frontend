@@ -16,6 +16,7 @@ function Hamburger({ isLoggedIn }) {
           <Nav.Link href={paths.appointment}>ADD APPOINTMENT</Nav.Link>
           <Nav.Link href={paths.userappointments}>MY APPOINTMENTS</Nav.Link>
           <Nav.Link href={paths.AddDoctor}>ADD DOCTOR</Nav.Link>
+          <Nav.Link href={paths.deleteDoctor}>DELETE DOCTOR</Nav.Link>
         </Nav>
       </Navbar.Collapse>
     </>
@@ -23,7 +24,7 @@ function Hamburger({ isLoggedIn }) {
 }
 
 Hamburger.propTypes = {
-  isLoggedIn: PropTypes.string.isRequired,
+  isLoggedIn: PropTypes.bool.isRequired,
 };
 
 export default Hamburger;

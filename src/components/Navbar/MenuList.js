@@ -22,12 +22,15 @@ function MenuList({ isLoggedIn }) {
       <ListGroup.Item action as={NavLink} to={paths.userappointments} className="nav-item">
         MY APPOINTMENTS
       </ListGroup.Item>
+      <ListGroup.Item action as={NavLink} to={paths.deleteDoctor} className="nav-item">
+        DELETE DOCTOR
+      </ListGroup.Item>
     </ListGroup>
   );
 }
 
 MenuList.propTypes = {
-  isLoggedIn: PropTypes.string.isRequired,
+  isLoggedIn: PropTypes.bool.isRequired,
 };
 
 export default MenuList;
