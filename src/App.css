@@ -68,7 +68,6 @@ body {
   text-transform: uppercase;
   font-size: 16px;
 }
-
 .logout-btn {
   position: absolute;
   bottom: 20px;
@@ -81,13 +80,14 @@ body {
   font-size: 0.8rem;
 }
 
-/* Homepage carousel */
 
+
+/* Homepage carousel */
 .react-multi-carousel-item {
   margin: 1rem;
 }
 
-.carousel-img-container {
+​.carousel-img-container {
   width: 100%;
   height: 80%;
   border-radius: 100px;
@@ -118,19 +118,21 @@ body {
   color: white;
 }
 
-.homepage-header-container h1,
+​.homepage-header-container h1,
 p {
   z-index: 1;
 }
 
-.carousel-description span {
+​.carousel-description span {
   color: gray;
 }
+
+
 
 /* Reservations */
 .reservations-container {
   height: 100vh;
-  color: #fff;
+  color: #41464b;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -248,8 +250,8 @@ p {
 
 #selectDropdown {
   color: #fff;
-  background: #97bf02;
-  border: 2px solid #c4dd78;
+  background: #439feb;
+  border: 2px solid #439feb;
   padding: 10px;
   width: 200px;
   height: 60px;
@@ -258,6 +260,13 @@ p {
   letter-spacing: 1px;
   font-size: 1.1rem;
   box-shadow: none;
+  cursor: pointer;
+}
+
+#selectDropdown:hover {
+  background: #fff;
+  color: #41464b;
+  border: 2px solid #41464b;
 }
 
 .dropdown-menu-end {
@@ -270,50 +279,47 @@ p {
     padding: 1rem;
   }
 
-  .reservations-description h1 {
+.reservations-description h1 {
     font-size: 3rem;
     letter-spacing: 1px;
     line-height: 4rem;
   }
-
-  .reservations-buttons {
+.reservations-buttons {
     flex-direction: column;
     align-items: center;
   }
 
-  .react-datepicker-wrapper,
+.react-datepicker-wrapper,
   .book-btn,
   .dropdown {
     width: 80% !important;
     margin-bottom: 1.5rem;
   }
 
-  #dropdown-menu-align-end,
+#dropdown-menu-align-end,
   #selectDropdown {
     width: 100%;
   }
-
-  .reservations-container {
+.reservations-container {
     justify-content: center;
   }
 
-  .reservation {
+.reservation {
     width: 90%;
   }
 }
 
-/* User Reservations */
 
-.card {
+/* User Reservations */
+.card{
   margin-bottom: 2rem;
   color: black;
 }
-
 .card-desc {
   padding: 1rem;
 }
 
-.card-title {
+.card-title{
   margin-bottom: 2rem;
 }
 
