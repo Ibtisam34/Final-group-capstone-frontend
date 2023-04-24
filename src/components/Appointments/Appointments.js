@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import DatePicker from 'react-datepicker';
+import { format } from 'date-fns';
 import 'react-datepicker/dist/react-datepicker.css';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link, useParams } from 'react-router-dom';
@@ -27,7 +28,7 @@ const Appointment = () => {
       appointment: {
         user_id: parseInt(userId, 10),
         doctor_id: parseInt(doctorId, 10),
-        date: startDate.toLocaleDateString(),
+        date: format(startDate, 'dd-MM-yyyy'),
       },
     };
     dispatch(postAppointments(postData));
