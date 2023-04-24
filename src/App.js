@@ -9,6 +9,7 @@ import Register from './components/LoginRegister/Register';
 import AddDoctor from './components/AddDoctor/AddDoctor';
 import Auth from './components/LoginRegister/Auth';
 import Appointment from './components/Appointments/Appointments';
+import UserAppointments from './components/Appointments/UserAppointments';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(localStorage.getItem('isLoggedIn'));
@@ -28,6 +29,10 @@ function App() {
         <Route
           path={paths.appointment}
           element={isLoggedIn ? <Appointment /> : <Login setIsLoggedIn={setIsLoggedIn} />}
+        />
+        <Route
+          path={paths.userappointments}
+          element={isLoggedIn ? <UserAppointments /> : <Login setIsLoggedIn={setIsLoggedIn} />}
         />
         <Route path={paths.login} element={<Login setIsLoggedIn={setIsLoggedIn} />} />
         <Route path={paths.register} element={<Register />} />

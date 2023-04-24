@@ -74,7 +74,7 @@ function Slider({ isLoggedIn }) {
 }
 
 Slider.propTypes = {
-  isLoggedIn: PropTypes.bool.isRequired,
+  isLoggedIn: PropTypes.string.isRequired,
 };
 
 export default Slider;
