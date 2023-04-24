@@ -68,6 +68,7 @@ body {
   text-transform: uppercase;
   font-size: 16px;
 }
+
 .logout-btn {
   position: absolute;
   bottom: 20px;
@@ -87,7 +88,7 @@ body {
   margin: 1rem;
 }
 
-​.carousel-img-container {
+.carousel-img-container {
   width: 100%;
   height: 80%;
   border-radius: 100px;
@@ -118,12 +119,19 @@ body {
   color: white;
 }
 
-​.homepage-header-container h1,
+.reservations-description h1 {
+  font-size: 3rem;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.homepage-header-container h1,
 p {
   z-index: 1;
 }
 
-​.carousel-description span {
+.carousel-description span {
   color: gray;
 }
 
@@ -173,13 +181,6 @@ p {
   width: 100%;
   text-align: center;
   color: #41464b;
-}
-
-.reservations-description h1 {
-  font-size: 3rem;
-  letter-spacing: 10px;
-  text-transform: uppercase;
-  font-weight: 600;
 }
 
 .reservations-description p {
@@ -279,47 +280,50 @@ p {
     padding: 1rem;
   }
 
-.reservations-description h1 {
+  .reservations-description h1 {
     font-size: 3rem;
     letter-spacing: 1px;
     line-height: 4rem;
   }
-.reservations-buttons {
+
+  .reservations-buttons {
     flex-direction: column;
     align-items: center;
   }
 
-.react-datepicker-wrapper,
+  .react-datepicker-wrapper,
   .book-btn,
   .dropdown {
     width: 80% !important;
     margin-bottom: 1.5rem;
   }
 
-#dropdown-menu-align-end,
+  #dropdown-menu-align-end,
   #selectDropdown {
     width: 100%;
   }
-.reservations-container {
+
+  .reservations-container {
     justify-content: center;
   }
 
-.reservation {
+  .reservation {
     width: 90%;
   }
 }
 
 
 /* User Reservations */
-.card{
+.card {
   margin-bottom: 2rem;
   color: black;
 }
+
 .card-desc {
   padding: 1rem;
 }
 
-.card-title{
+.card-title {
   margin-bottom: 2rem;
 }
 
