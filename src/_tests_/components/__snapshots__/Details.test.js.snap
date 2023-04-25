@@ -1,0 +1,248 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Details page renders correctly 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="container"
+      >
+        <div
+          class="details-container"
+        >
+          <div
+            class="flex-direction"
+          >
+            <div>
+              <img
+                alt="doctor"
+                class="thumbnail images rounded"
+                src="http://localhost:3001/adddoctor"
+              />
+            </div>
+            <div
+              class="card-body"
+            >
+              <div
+                class="details-text-container"
+              >
+                <div>
+                  <h3
+                    class="text-dark"
+                  >
+                    Jer
+                  </h3>
+                  <p
+                    class="description my-4"
+                  >
+                    nur
+                  </p>
+                  <div>
+                    <p
+                      class="description"
+                    >
+                      3
+                    </p>
+                    <p
+                      class="description"
+                    >
+                      Email:
+                       
+                      jer@gmail.com
+                    </p>
+                    <p
+                      class="description"
+                    >
+                      Phone:
+                       
+                      1234567890
+                    </p>
+                  </div>
+                  <div>
+                    <a
+                      href="/undefined/3/appointment"
+                    >
+                      <button
+                        class="btn-success theme-btn mt-4 rounded my-btn"
+                        type="button"
+                      >
+                        Book
+                      </button>
+                    </a>
+                  </div>
+                  <div>
+                    <a
+                      href="/undefined"
+                    >
+                      <svg
+                        class="mt-4"
+                        fill="currentColor"
+                        height="1em"
+                        stroke="currentColor"
+                        stroke-width="0"
+                        viewBox="0 0 24 24"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M21 11H6.414l5.293-5.293-1.414-1.414L2.586 12l7.707 7.707 1.414-1.414L6.414 13H21z"
+                        />
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="container"
+    >
+      <div
+        class="details-container"
+      >
+        <div
+          class="flex-direction"
+        >
+          <div>
+            <img
+              alt="doctor"
+              class="thumbnail images rounded"
+              src="http://localhost:3001/adddoctor"
+            />
+          </div>
+          <div
+            class="card-body"
+          >
+            <div
+              class="details-text-container"
+            >
+              <div>
+                <h3
+                  class="text-dark"
+                >
+                  Jer
+                </h3>
+                <p
+                  class="description my-4"
+                >
+                  nur
+                </p>
+                <div>
+                  <p
+                    class="description"
+                  >
+                    3
+                  </p>
+                  <p
+                    class="description"
+                  >
+                    Email:
+                     
+                    jer@gmail.com
+                  </p>
+                  <p
+                    class="description"
+                  >
+                    Phone:
+                     
+                    1234567890
+                  </p>
+                </div>
+                <div>
+                  <a
+                    href="/undefined/3/appointment"
+                  >
+                    <button
+                      class="btn-success theme-btn mt-4 rounded my-btn"
+                      type="button"
+                    >
+                      Book
+                    </button>
+                  </a>
+                </div>
+                <div>
+                  <a
+                    href="/undefined"
+                  >
+                    <svg
+                      class="mt-4"
+                      fill="currentColor"
+                      height="1em"
+                      stroke="currentColor"
+                      stroke-width="0"
+                      viewBox="0 0 24 24"
+                      width="1em"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M21 11H6.414l5.293-5.293-1.414-1.414L2.586 12l7.707 7.707 1.414-1.414L6.414 13H21z"
+                      />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

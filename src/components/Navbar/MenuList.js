@@ -30,7 +30,10 @@ function MenuList({ isLoggedIn }) {
 }
 
 MenuList.propTypes = {
-  isLoggedIn: PropTypes.bool.isRequired,
+  isLoggedIn: PropTypes.bool,
+};
+MenuList.defaultProps = {
+  isLoggedIn: false,
 };
 
 export default MenuList;

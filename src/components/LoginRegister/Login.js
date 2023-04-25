@@ -22,9 +22,9 @@ function Login({ setIsLoggedIn }) {
   const handleLogin = () => {
     users.map((user) => {
       if (user.email === userEmail) {
-        localStorage.setItem('isLoggedIn', 'true');
+        localStorage.setItem('isLoggedIn', true);
         localStorage.setItem('userId', `${user.id}`);
-        setIsLoggedIn('true');
+        setIsLoggedIn(true);
         navigate('/');
       }
       return 'hey';
@@ -70,7 +70,7 @@ function Login({ setIsLoggedIn }) {
 }
 
 Login.propTypes = {
-  setIsLoggedIn: PropTypes.func.isRequired,
+  setIsLoggedIn: PropTypes.func,
 };
 
 export default Login;

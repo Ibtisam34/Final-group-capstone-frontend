@@ -68,9 +68,9 @@ Detail.propTypes = {
     email: PropTypes.string.isRequired,
     phone: PropTypes.string.isRequired,
     availability: PropTypes.string.isRequired,
-    id: PropTypes.string.isRequired,
+    id: PropTypes.number.isRequired,
   }),
-  isLoggedIn: PropTypes.string,
+  isLoggedIn: PropTypes.bool,
 };
 
 Detail.defaultProps = {
@@ -81,9 +81,9 @@ Detail.defaultProps = {
     email: '',
     phone: '',
     availability: '',
-    id: '',
+    id: 0,
   },
-  isLoggedIn: 'false',
+  isLoggedIn: false,
 };
 
 export default Detail;

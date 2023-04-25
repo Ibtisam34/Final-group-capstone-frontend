@@ -24,7 +24,10 @@ function Hamburger({ isLoggedIn }) {
 }
 
 Hamburger.propTypes = {
-  isLoggedIn: PropTypes.bool.isRequired,
+  isLoggedIn: PropTypes.bool,
+};
+Hamburger.defaultProps = {
+  isLoggedIn: false,
 };
 
 export default Hamburger;
