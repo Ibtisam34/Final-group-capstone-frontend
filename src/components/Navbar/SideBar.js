@@ -22,7 +22,7 @@ function SideBar({ isLoggedIn }) {
 }
 
 SideBar.propTypes = {
-  isLoggedIn: PropTypes.string.isRequired,
+  isLoggedIn: PropTypes.bool.isRequired,
 };
 
 export default SideBar;

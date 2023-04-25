@@ -69,21 +69,8 @@ Detail.propTypes = {
     phone: PropTypes.string.isRequired,
     availability: PropTypes.string.isRequired,
     id: PropTypes.string.isRequired,
-  }),
-  isLoggedIn: PropTypes.string,
-};
-
-Detail.defaultProps = {
-  doctor: {
-    image: '',
-    name: '',
-    specialization: '',
-    email: '',
-    phone: '',
-    availability: '',
-    id: '',
-  },
-  isLoggedIn: 'false',
+  }).isRequired,
+  isLoggedIn: PropTypes.bool.isRequired,
 };
 
 export default Detail;

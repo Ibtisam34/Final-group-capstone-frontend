@@ -10,7 +10,7 @@ function CreateDoctorForm() {
   const [specialization, setSpecialization] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
-  const [availability, setAvailability] = useState('');
+  const [availability, setAvailability] = useState([]);
   const [image, setImage] = useState('');
 
   const dispatch = useDispatch();

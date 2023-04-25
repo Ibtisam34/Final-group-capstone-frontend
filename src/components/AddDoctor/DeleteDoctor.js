@@ -12,8 +12,9 @@ function Removedoctor() {
   const navigate = useNavigate();
 
   const handleDelete = () => {
-    dispatch(deleteDoctor(doctorId));
-    dispatch(fetchDoctors());
+    dispatch(deleteDoctor(doctorId)).then(() => {
+      dispatch(fetchDoctors());
+    });
     navigate(`/${userId}`);
   };
 
