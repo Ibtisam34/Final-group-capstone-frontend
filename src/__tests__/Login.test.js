@@ -12,4 +12,13 @@ describe('Login to app', () => {
     const tree = render(<Provider store={store}><Router><Login /></Router></Provider>);
     expect(tree).toMatchSnapshot();
   });
+
+  
+  it('should have email input field', () => {
+    const { getByPlaceholderText } = render(<Provider store={store}><Router><Login /></Router></Provider>);
+    const emailInput = getByPlaceholderText('Email address');
+    expect(emailInput).toBeInTheDocument();
+  })
+
+
 });
