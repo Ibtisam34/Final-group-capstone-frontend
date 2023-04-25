@@ -20,5 +20,11 @@ describe('Login to app', () => {
     expect(emailInput).toBeInTheDocument();
   })
 
+  it('should have login button', () => {
+    const { getByText } = render(<Provider store={store}><Router><Login /></Router></Provider>);
+    const loginButton = getByText('Login');
+    expect(loginButton).toBeInTheDocument();
+    })
+
 
 });
