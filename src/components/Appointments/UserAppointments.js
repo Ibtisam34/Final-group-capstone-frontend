@@ -20,8 +20,9 @@ const UserAppointments = () => {
 
   const handleDelete = (e, id) => {
     e.preventDefault();
-    dispatch(deleteAppointment(id));
-    dispatch(fetchDoctors());
+    dispatch(deleteAppointment(id)).then(() => {
+      dispatch(fetchAppointments());
+    });
   };
 
   return (
