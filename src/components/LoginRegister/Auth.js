@@ -4,7 +4,8 @@ const Auth = (isLoggedIn) => {
     details: ':user_id/:doctor_id/details',
     appointment: ':user_id/:doctor_id/appointment',
     userappointments: 'users/:user_id/appointments',
-    AddDoctor: 'adddoctor',
+    AddDoctor: ':user_id/add',
+    deleteDoctor: ':user_id/delete',
     login: 'login',
     register: 'register',
   };
@@ -14,7 +15,8 @@ const Auth = (isLoggedIn) => {
     details: ':doctor_id/details',
     appointment: 'login',
     userappointments: 'appointments',
-    AddDoctor: 'adddoctor',
+    AddDoctor: 'login',
+    deleteDoctor: 'login',
     login: 'login',
     register: 'register',
   };
@@ -27,7 +29,8 @@ export const MenuAuth = (isLoggedIn, userId, doctorId = 0) => {
     home: `/${userId}`,
     appointment: `/${userId}/${doctorId}/appointment`,
     userappointments: `users/${userId}/appointments`,
-    AddDoctor: 'adddoctor',
+    AddDoctor: `/${userId}/add`,
+    deleteDoctor: `/${userId}/delete`,
     login: 'login',
     register: 'register',
   };
@@ -36,7 +39,8 @@ export const MenuAuth = (isLoggedIn, userId, doctorId = 0) => {
     home: '',
     appointment: 'login',
     userappointments: 'appointments',
-    AddDoctor: 'adddoctor',
+    AddDoctor: 'login',
+    deleteDoctor: 'login',
     login: 'login',
     register: 'register',
   };

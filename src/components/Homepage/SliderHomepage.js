@@ -52,7 +52,7 @@ function Slider({ isLoggedIn }) {
           dotListClass="custom-dot-list-style"
           itemClass="carousel-item-padding-40-px"
         >
-          {doctorObj.map((doctor) => (
+          {Array.isArray(doctorObj) && doctorObj.map((doctor) => (
             <div key={doctor.id} className="carousel-img-container" role="link" tabIndex="0" onKeyDown={() => null} onClick={() => handleSelected(doctor)}>
               <img src={doctor.image} alt="doctor" />
               <div className="carousel-description">

@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import DatePicker from 'react-datepicker';
-import { format } from 'date-fns';
 import 'react-datepicker/dist/react-datepicker.css';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link, useParams } from 'react-router-dom';
-import Alert from 'react-bootstrap/Alert';
 import { FaArrowLeft } from 'react-icons/fa';
 import { fetchDoctors } from '../../redux/doctors/doctorsReducer';
 import { postAppointments } from '../../redux/appointments/appointment';
@@ -24,29 +22,15 @@ const Appointment = () => {
 
   const [doctorId, setDoctorId] = useState(null);
 
-  const [flash, setFlash] = useState(false);
-
-  useEffect(() => {
-    let timeout;
-    if (flash) {
-      timeout = setTimeout(() => {
-        setFlash(false);
-      }, 5000);
-    }
-    return () => clearTimeout(timeout);
-  }, [flash]);
-
   const createAppointment = () => {
     const postData = {
       appointment: {
         user_id: parseInt(userId, 10),
         doctor_id: parseInt(doctorId, 10),
-        date: format(startDate, 'dd-MM-yyyy'),
+        date: startDate.toLocaleDateString(),
       },
     };
     dispatch(postAppointments(postData));
-
-    setFlash(true);
   };
 
   return (
@@ -88,7 +72,7 @@ const Appointment = () => {
             <button type="submit" onClick={createAppointment} className="book-btn">Book now</button>
           </div>
           {appointmentPost?.payload?.status === 201
-            && <Alert show={flash} variant="success" transition>Appointment was successfully booked!</Alert>}
+            && <p>Appointment was successfully booked!</p>}
 
         </div>
       </div>
