@@ -17,4 +17,12 @@ describe('Register to app', () => {
         const emailInput = getByPlaceholderText('Email address');
         expect(emailInput).toBeInTheDocument();
     });
+
+    it('should have password input field', () => {
+        const { getByPlaceholderText } = render(<Provider store={store}><Router><Register /></Router></Provider>);
+        const passwordInput = getByPlaceholderText('Full name');
+        expect(passwordInput).toBeInTheDocument();
+    });
+
+
 });
