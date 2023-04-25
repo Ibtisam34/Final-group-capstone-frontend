@@ -26,5 +26,9 @@ describe('Login to app', () => {
     expect(loginButton).toBeInTheDocument();
     })
 
-
+    it('should have register button', () => {
+        const { getByText } = render(<Provider store={store}><Router><Login /></Router></Provider>);
+        const registerButton = getByText('Register');
+        expect(registerButton).toBeInTheDocument();
+        })
 });
