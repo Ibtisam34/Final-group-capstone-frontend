@@ -311,6 +311,11 @@ p {
   .reservation {
     width: 90%;
   }
+
+  .logo-img {
+    width: 100px;
+    height: 100px;
+  }
 }
 
 /* User Reservations */
