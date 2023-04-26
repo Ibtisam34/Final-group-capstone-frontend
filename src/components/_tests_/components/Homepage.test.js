@@ -17,4 +17,14 @@ describe('Home page', () => {
     );
     expect(screen.getByText('Top-rated Doctors')).toBeInTheDocument();
   });
+
+  it('renders homapage correctly', () => {
+    const tree = render(
+        <Provider store={store}>
+            <Router>
+                <Homepage />
+            </Router>
+        </Provider>);
+        expect(tree).toMatchSnapshot();
+  })
 });
