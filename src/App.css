@@ -276,6 +276,12 @@ p {
   border: none;
 }
 
+.doctor-arrow {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
 @media only screen and (max-width: 769px) {
   .reservations-description {
     padding: 1rem;
