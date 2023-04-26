@@ -80,7 +80,7 @@ Clone this repository to your desired folder:
 
 To run and view this application, you will first have to clone a local version of this repository using:
 
-`git clone https://github.com/Ibtisam34/Final-group-capstone-frontend`
+git clone https://github.com/Ibtisam34/Final-group-capstone-frontend
 
 After that navigate to the newly created folder:
 
