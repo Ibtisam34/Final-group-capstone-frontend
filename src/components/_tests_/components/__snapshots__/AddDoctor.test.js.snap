@@ -1,0 +1,182 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Add a Doctor renders correctly 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <h1
+        class="text-center m-4"
+      >
+        Add Doctor
+      </h1>
+      <div
+        class="container"
+      >
+        <form
+          class=""
+        >
+          <input
+            class="w-50 mb-3 form-control"
+            placeholder="Doctor name"
+            required=""
+            type="text"
+          />
+          <input
+            class="w-50 mb-3 form-control"
+            placeholder="Doctor specialization"
+            required=""
+            type="text"
+          />
+          <input
+            class="w-50 mb-3 form-control"
+            placeholder="Email"
+            required=""
+            type="email"
+          />
+          <input
+            class="w-50 mb-3 form-control"
+            placeholder="Phone number"
+            required=""
+            type="tel"
+          />
+          <input
+            class="w-50 mb-3 form-control"
+            placeholder="Availability"
+            required=""
+            type="text"
+          />
+          <input
+            class="w-75 mb-3 form-control"
+            placeholder="Image url"
+            required=""
+            type="text"
+          />
+          <div
+            class="text-center mb-5"
+          >
+            <button
+              class="theme-btn rounded btn btn-primary"
+              type="submit"
+            >
+              Add Doctor
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <h1
+      class="text-center m-4"
+    >
+      Add Doctor
+    </h1>
+    <div
+      class="container"
+    >
+      <form
+        class=""
+      >
+        <input
+          class="w-50 mb-3 form-control"
+          placeholder="Doctor name"
+          required=""
+          type="text"
+        />
+        <input
+          class="w-50 mb-3 form-control"
+          placeholder="Doctor specialization"
+          required=""
+          type="text"
+        />
+        <input
+          class="w-50 mb-3 form-control"
+          placeholder="Email"
+          required=""
+          type="email"
+        />
+        <input
+          class="w-50 mb-3 form-control"
+          placeholder="Phone number"
+          required=""
+          type="tel"
+        />
+        <input
+          class="w-50 mb-3 form-control"
+          placeholder="Availability"
+          required=""
+          type="text"
+        />
+        <input
+          class="w-75 mb-3 form-control"
+          placeholder="Image url"
+          required=""
+          type="text"
+        />
+        <div
+          class="text-center mb-5"
+        >
+          <button
+            class="theme-btn rounded btn btn-primary"
+            type="submit"
+          >
+            Add Doctor
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
