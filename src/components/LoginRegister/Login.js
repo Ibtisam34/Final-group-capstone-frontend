@@ -9,7 +9,7 @@ import Slider from './Slider';
 import Logo from '../../assets/images/LOGO-DOCTOR.png';
 import { fetchUsers } from '../../redux/users/usersReducer';
 
-function Login({ setIsLoggedIn }) {
+const Login = ({ setIsLoggedIn }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [userEmail, setEmail] = useState('');
@@ -67,7 +67,7 @@ function Login({ setIsLoggedIn }) {
       <Slider />
     </Container>
   );
-}
+};
 
 Login.propTypes = {
   setIsLoggedIn: PropTypes.bool.isRequired,

@@ -4,7 +4,7 @@ import ListGroup from 'react-bootstrap/ListGroup';
 import PropTypes from 'prop-types';
 import { MenuAuth } from '../LoginRegister/Auth';
 
-function MenuList({ isLoggedIn }) {
+const MenuList = ({ isLoggedIn }) => {
   const userId = localStorage.getItem('userId');
   const paths = MenuAuth(isLoggedIn, userId);
 
@@ -27,7 +27,7 @@ function MenuList({ isLoggedIn }) {
       </ListGroup.Item>
     </ListGroup>
   );
-}
+};
 
 MenuList.propTypes = {
   isLoggedIn: PropTypes.bool.isRequired,

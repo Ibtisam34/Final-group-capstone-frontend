@@ -3,7 +3,7 @@ import { Navbar, Nav } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import { MenuAuth } from '../LoginRegister/Auth';
 
-function Hamburger({ isLoggedIn }) {
+const Hamburger = ({ isLoggedIn }) => {
   const userId = localStorage.getItem('userId');
   const paths = MenuAuth(isLoggedIn, userId);
 
@@ -21,7 +21,7 @@ function Hamburger({ isLoggedIn }) {
       </Navbar.Collapse>
     </>
   );
-}
+};
 
 Hamburger.propTypes = {
   isLoggedIn: PropTypes.bool.isRequired,

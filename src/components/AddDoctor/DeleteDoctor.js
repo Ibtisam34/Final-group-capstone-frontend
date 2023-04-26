@@ -5,7 +5,7 @@ import { Link, useParams, useNavigate } from 'react-router-dom';
 import { fetchDoctors } from '../../redux/doctors/doctorsReducer';
 import { deleteDoctor } from '../../redux/doctors/doctorsDeleteReducer';
 
-function Removedoctor() {
+const Removedoctor = () => {
   const [doctorId, setDoctorId] = useState();
   const { user_id: userId } = useParams();
   const dispatch = useDispatch();
@@ -82,6 +82,6 @@ function Removedoctor() {
     </div>
 
   );
-}
+};
 
 export default Removedoctor;

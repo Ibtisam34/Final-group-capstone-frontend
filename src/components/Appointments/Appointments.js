@@ -38,7 +38,7 @@ const Appointment = () => {
       <div className="reservations-container">
         <div className="reservation-header-links">
           <Link to={`/${userId}`}>
-            <FaArrowLeft style={{ color: '#0d6efd', fontSize: '1.2rem', margin: '5px' }} />
+            <FaArrowLeft style={{ color: '#41464b', fontSize: '2rem', margin: '5px' }} />
           </Link>
         </div>
         <div className="reservations-description">

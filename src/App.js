@@ -12,7 +12,7 @@ import Appointment from './components/Appointments/Appointments';
 import UserAppointments from './components/Appointments/UserAppointments';
 import Removedoctor from './components/AddDoctor/DeleteDoctor';
 
-function App() {
+const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(localStorage.getItem('isLoggedIn'));
   const paths = Auth(isLoggedIn);
 
@@ -44,6 +44,6 @@ function App() {
       </Routes>
     </main>
   );
-}
+};
 
 export default App;

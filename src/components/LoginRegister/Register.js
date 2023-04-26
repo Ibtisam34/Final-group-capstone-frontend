@@ -8,7 +8,7 @@ import Slider from './Slider';
 import Logo from '../../assets/images/LOGO-DOCTOR.png';
 import { postUsers } from '../../redux/users/usersReducer';
 
-function Register() {
+const Register = () => {
   const dispatch = useDispatch();
   const [userName, setName] = useState('');
   const [userEmail, setEmail] = useState('');
@@ -75,6 +75,6 @@ function Register() {
       <Slider />
     </Container>
   );
-}
+};
 
 export default Register;

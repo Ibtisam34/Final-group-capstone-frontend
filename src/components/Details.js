@@ -7,7 +7,7 @@ import { useParams, Link } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import { MenuAuth } from './LoginRegister/Auth';
 
-function Detail({ doctor, isLoggedIn }) {
+const Detail = ({ doctor, isLoggedIn }) => {
   const { user_id: userId } = useParams();
   const {
     image, name, specialization, email, phone, availability, id,
@@ -58,7 +58,7 @@ function Detail({ doctor, isLoggedIn }) {
       </div>
     </Container>
   );
-}
+};
 
 Detail.propTypes = {
   doctor: PropTypes.shape({
