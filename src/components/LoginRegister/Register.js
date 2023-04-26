@@ -32,7 +32,7 @@ function Register() {
   const users = useSelector((state) => state.usersReducer);
   return (
     <Container fluid>
-      <Container className="login-card col-4 pb-5 bg-white border rounded">
+      <Container className="login-card col-9 pb-5 bg-white border rounded">
         <div className="logo-wrapper">
           <img src={Logo} alt="logo" className="logo-img" width="200" height="200" />
         </div>

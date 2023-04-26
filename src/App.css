@@ -38,7 +38,7 @@ body {
 }
 
 .logo-text {
-  font-family: 'Great Vibes', cursive;
+  font-family: 'Roboto', cursive;
   font-size: 1.5rem;
   font-weight: 600;
 }
@@ -184,6 +184,10 @@ p {
   font-size: 1.3rem;
   letter-spacing: 1px;
   text-align: center;
+}
+
+.paragraph-text {
+  margin-bottom: 70px;
 }
 
 .reservations-buttons {

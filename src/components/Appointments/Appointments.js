@@ -72,7 +72,7 @@ const Appointment = () => {
             <button type="submit" onClick={createAppointment} className="book-btn">Book now</button>
           </div>
           {appointmentPost?.payload?.status === 201
-            && <p>Appointment was successfully booked!</p>}
+            && <p className="paragraph-text">Appointment was successfully booked!</p>}
 
         </div>
       </div>
